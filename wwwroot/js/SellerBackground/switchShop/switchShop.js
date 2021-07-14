@@ -16,16 +16,16 @@ Vue.component('shop', {
         }
     },
     methods: {
-        drawType(type){
-            if(type==='OFFICIAL_FLAGSHIP'){
+        drawType(type) {
+            if (type === 'OFFICIAL_FLAGSHIP') {
                 return '官方旗舰店';
-            }else if(type==='PLATFORM_AUTH'){
+            } else if (type === 'PLATFORM_AUTH') {
                 return '平台认证店';
-            }else if(type==='INDIVIDUAL'){
+            } else if (type === 'INDIVIDUAL') {
                 return '个人店铺';
-            }else if(type==='BANNED_SHOP'){
+            } else if (type === 'BANNED_SHOP') {
                 return '被封禁店铺';
-            }else{
+            } else {
                 return '未定义';
             }
         },
@@ -43,6 +43,7 @@ Vue.component('shop', {
                     window.location.href = "/SellerBackground/Home";
                 }
             });
+        },
     },
     template: `
         <el-card>
@@ -57,5 +58,6 @@ Vue.component('shop', {
             </div>
         </el-card>
     `
+
 })
 

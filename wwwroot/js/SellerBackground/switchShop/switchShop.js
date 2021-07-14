@@ -31,6 +31,7 @@ Vue.component('shop', {
         },
         handleClick(id){
             console.log(id);
+           //this.displayorders(id);
             
             
         }

@@ -1,8 +1,8 @@
 Vue.component('side-bar', {
+    props:["show"],
     data: function () {
         return {
             active: 1,
-            show:true,
         }
     },
     methods:{
@@ -39,8 +39,10 @@ Vue.component('side-bar', {
                     break;
             }
         }
+        ,
     },
     template: `
+        <div v-show="show">
         <el-menu default-active="activeIndex" class="el-menu-vertical-demo"
             background-color="transparent" text-color="#8a8c93" active-text-color="#29b7cb">
             <el-menu-item index="1">
@@ -100,8 +102,14 @@ Vue.component('side-bar', {
                 </el-menu-item-group>
             </el-submenu>
         </el-menu>
+    </div>
     `
 })
 
-let sidebar = new Vue({ el: '#nav' });
+let sidebar = new Vue({
+    el: '#nav',
+    data: {
+        show: true,
+    }
+});
 

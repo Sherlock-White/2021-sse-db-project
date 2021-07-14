@@ -1,5 +1,3 @@
-
-
 Vue.component('shop', {
     data: function () {
         return {
@@ -69,6 +67,7 @@ Vue.component('shop', {
             </div>
         </el-card>
     `
+<<<<<<< HEAD
 })
 
 let shop = new Vue({ el: '#shop' });
@@ -104,3 +103,6 @@ function start() {
 window.onload = start();
 
 
+=======
+})
+>>>>>>> parent of 32415d6 (Merge branch 'main' into main)

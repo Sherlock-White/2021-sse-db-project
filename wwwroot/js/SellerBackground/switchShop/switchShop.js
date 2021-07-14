@@ -29,12 +29,20 @@ Vue.component('shop', {
                 return '未定义';
             }
         },
-        handleClick(id){
-            console.log(id);
-           //this.displayorders(id);
-            
-            
-        }
+        handleClick(id) {
+            $.ajax({
+                type: "post",
+                url: "/SellerBackground/SetShopIDForm",
+                async: false,
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify({ "ShopID": id }),
+                success: function (result) {
+                    console.log("修改全局shopID是否成功：");
+                    console.log(result);
+                    window.location.href = "/SellerBackground/Home";
+                }
+            });
     },
     template: `
         <el-card>

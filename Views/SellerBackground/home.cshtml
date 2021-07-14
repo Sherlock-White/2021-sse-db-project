@@ -44,13 +44,13 @@
             <div class="main" id="home-list">
                 <div id="card-list">
                     <el-card class="card" v-for="item in object">
-                    <div class="card">
-                        <img :src="item.imgURL">
-                        <div class="info">
-                            <div class="label">{{item.label}}</div>
-                            <div class="num">{{item.num}}</div>
+                        <div class="card">
+                            <img :src="item.imgURL">
+                            <div class="info">
+                                <div class="label">{{item.label}}</div>
+                                <div class="num">{{item.num}}</div>
+                            </div>
                         </div>
-                    </div>
                     </el-card>
                 </div>
                 <list v-bind:objlist="objectList"
@@ -59,8 +59,8 @@
 
         </div>
     </div>
-    <script src="~/js/SellerBackground/home/displayData.js"></script>
     <script src="~/js/SellerBackground/sidebar.js"></script>
+    <script src="~/js/SellerBackground/home/displayData.js"></script>
     <script src="~/js/SellerBackground/dropdownMenu.js"></script>
     <script src="~/js/SellerBackground/list.js"></script>
     <script src="~/js/SellerBackground/home/displayOrders.js"></script>

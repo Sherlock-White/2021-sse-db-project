@@ -2,19 +2,6 @@
 
 Vue.component('shop', {
     props:["objlist","draw"],
-    //mounted(){
-    //    this.displayshops(this.getCookie("sellerID"));
-    //    this.displayshops("1");
-    //    console.log("1111111111111111");
-    //    console.log(this.objlist)
-    //},
-    watch: {
-        draw: function (curVal, oldVal) {
-            if (curVal === true) {
-                
-            }
-        }
-    },
     methods: {
         drawType(type) {
             if (type === 'OFFICIAL_FLAGSHIP') {

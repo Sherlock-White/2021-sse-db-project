@@ -172,9 +172,9 @@ namespace InternetMall.Controllers
 
             if (str==null)
             {
-                return null;  //无店铺，切换到“创建店铺”界面
+                return new ContentResult { Content = "", ContentType = "application/json" };   //无店铺，切换到“创建店铺”界面
             }
-            return new ContentResult { Content = str, ContentType = "application/json" }; ;      //进入“选择店铺”页面
+            return new ContentResult { Content = str, ContentType = "application/json" };       //进入“选择店铺”页面
         }
         public IActionResult SetShopIDForm([FromBody] DisplayOrders sh)  //卖家选择店铺后更改全局的shopID信息
         {

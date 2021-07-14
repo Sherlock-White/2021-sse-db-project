@@ -29,12 +29,17 @@ function displayshops(sellerID) {
         dataType: "json",
         data: JSON.stringify({ "SellerID": sellerID }),
         success: function (result) {
-            if (result === null) {
-                /*sidebar_js.sidebar.show = false;*/
-            }
+            /*if (result === null) {
+                console.log("¿ÕÁË£¡£¡£¡£¡");
+                /////////////////////////////////////////////
+                ////////////////////////////////////////////
+                ///////////////////////////////////////////
+                sidebar.show = false;
+            }*/
             console.log(result);
             sh.objectList = result;
             sh.draw = true;
+            sidebar.show = true;
         }
     });
 }

@@ -260,14 +260,8 @@ namespace InternetMall.Services
 
         public string DisplayShops(string sellerID)// 找到商家的所有店铺
         {
-<<<<<<< HEAD
             var shops = _context.Shops.Where(s => s.SellerId == sellerID).ToList();
             if (shops == null || shops.Count == 0)//没有店铺
-=======
-            var shoplist = _context.Shops.Where(s => s.SellerId == sellerID).ToList();
-
-            if (shoplist == null || shoplist.Count == 0)//没有店铺
->>>>>>> parent of 32415d6 (Merge branch 'main' into main)
             {
                 return null;
             }

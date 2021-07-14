@@ -184,29 +184,17 @@ namespace InternetMall.Controllers
                 return Redirect("/Entry/BuyerLogIn");
             }
         }
-
-        public IActionResult successPay()   //最终购买成功
+        public IActionResult Settle()
         {
-            if (Request.Cookies["buyerNickName"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return Redirect("/Entry/BuyerLogIn");
-            }
+            return View();
         }
-
-        public IActionResult SubmitOrder()   //支付宝付款页面
+        public IActionResult Payment()
         {
-            if (Request.Cookies["buyerNickName"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return Redirect("/Entry/BuyerLogIn");
-            }
+            return View();
+        }
+        public IActionResult SubmitOrder()
+        {
+            return View();
         }
 
 
@@ -216,7 +204,6 @@ namespace InternetMall.Controllers
         {
             Global.GCommodityID = commodity.ID;
             Global.GCommodityNum = commodity.Amount;
-            Global.GConfirmOrderType = 1;
             JsonData jsondata = new JsonData();
             jsondata["commodityID"] = commodity.ID;
             return Json(jsondata.ToJson());

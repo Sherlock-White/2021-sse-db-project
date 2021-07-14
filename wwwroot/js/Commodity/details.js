@@ -45,16 +45,17 @@ let vm = new Vue({
             }
         },
         sendBuy() {
-            var output = { ID: this.input.commodityId, Amount: this.number }
+            var output = { number: this.number,id:this.input.id }
+
             $.ajax({
                 type: "post",
-                url: "/Purchase/SetCommodDetail",
+                url: "",
                 async: false,
                 contentType: "application/json",
                 dataType: "json",
-                data: JSON.stringify( output ),
+                data: JSON.stringify({ output }),
                 success: function (result) {
-                    window.location = "/Purchase/ConfirmOrder"
+                    alert("购买失败")
                 }
             });
         },

@@ -137,6 +137,9 @@ namespace InternetMall.Controllers
             if (shopService.createShop(shopSignUp.SellerID, shopSignUp.Name, shopCategory, shopSignUp.Description))
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 624510a (Merge pull request #33 from 1654364091/main)
                 JsonData jsondata = new JsonData();
                 jsondata["signUp"] = "SUCCESS";
 =======

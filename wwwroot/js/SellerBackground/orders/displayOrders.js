@@ -7,10 +7,13 @@ let ord = new Vue({
 })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 >>>>>>> parent of 32415d6 (Merge branch 'main' into main)
+=======
+>>>>>>> parent of 624510a (Merge pull request #33 from 1654364091/main)
 function displayorders(shopID) {
     $.ajax({
         type: "post",
@@ -30,6 +33,7 @@ function displayorders(shopID) {
                 ord.objectList = result;
                 ord.draw = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
             }
 =======
                 console.log("draw1");
@@ -42,13 +46,20 @@ function displayorders(shopID) {
             }
             //console.log(result);
 >>>>>>> parent of 32415d6 (Merge branch 'main' into main)
+=======
+            }
+>>>>>>> parent of 624510a (Merge pull request #33 from 1654364091/main)
         }
     });
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //这边修改传入的参数！！（从coockie中拿sellerID->shopID
 =======
 
 >>>>>>> parent of 32415d6 (Merge branch 'main' into main)
+=======
+//这边修改传入的参数！！（从coockie中拿sellerID->shopID
+>>>>>>> parent of 624510a (Merge pull request #33 from 1654364091/main)
 window.onload = displayorders("1");

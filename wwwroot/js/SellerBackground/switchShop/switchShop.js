@@ -2,42 +2,6 @@
 
 Vue.component('shop', {
     props:["objlist","draw"],
-    data: function () {
-        return {
-            shopData: [{
-                id: '123456',
-                sellerId:'654321',
-                name:'袁阿姨的中药铺',
-                credit:23,
-                type:'OFFICIAL_FLAGSHIP',
-                picURL:'../../Images/SellerBackground/null.png'
-            },
-            {
-                id: '123457',
-                sellerId:'754321',
-                name:'萌萌哒鸡蛋饼铺子',
-                credit:66,
-                type:'PLATFORM_AUTH',
-                picURL:'../../Images/SellerBackground/null.png'
-            },
-            {
-                id: '123457',
-                sellerId:'754321',
-                name:'萌萌哒鸡蛋饼铺子',
-                credit:66,
-                type:'PLATFORM_AUTH',
-                picURL:'../../Images/SellerBackground/null.png'
-            },
-            {
-                id: '123457',
-                sellerId:'754321',
-                name:'萌萌哒鸡蛋饼铺子',
-                credit:66,
-                type:'PLATFORM_AUTH',
-                picURL:'../../Images/SellerBackground/null.png'
-            }]
-        }
-    },
     watch: {
         draw: function (curVal, oldVal) {
             if (curVal === true) {

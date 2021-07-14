@@ -136,7 +136,6 @@ namespace InternetMall.Controllers
 
             if (shopService.createShop(shopSignUp.SellerID, shopSignUp.Name, shopCategory, shopSignUp.Description))
             {
-
                 JsonData jsondata = new JsonData();
                 jsondata["signUp"] = "SUCCESS";
                 HttpContext.Response.Cookies.Append("shopName", shopSignUp.Name, new CookieOptions { Expires = DateTime.Now.AddSeconds(300) });
@@ -144,10 +143,9 @@ namespace InternetMall.Controllers
             }
             else
             {
-                //JsonData jsondata = new JsonData();
-                //jsondata["signUp"] = "ERROR";
-                //return Json(jsondata.ToJson());
-                return false;
+                JsonData jsondata = new JsonData();
+                jsondata["signUp"] = "ERROR";
+                return Json(jsondata.ToJson());
             }
         }
 

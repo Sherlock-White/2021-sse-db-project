@@ -5,6 +5,7 @@ let ord = new Vue({
         draw:false,
     }
 })
+
 function displayorders(shopID) {
     $.ajax({
         type: "post",
@@ -22,7 +23,10 @@ function displayorders(shopID) {
             else {
                 ord.objectList = result;
                 ord.draw = true;
+            }
         }
     });
 }
+
+//这边修改传入的参数！！（从coockie中拿sellerID->shopID
 window.onload = displayorders("1");

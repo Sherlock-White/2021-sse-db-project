@@ -70,7 +70,7 @@ Vue.component('search', {
                     }
                 }]
             },
-            time: '',   //[ "2021-08-03T16:00:00.000Z", "2021-08-18T16:00:00.000Z" ]
+            time: null,   //[ "2021-08-03T16:00:00.000Z", "2021-08-18T16:00:00.000Z" ]
             ruleForm: {
                 id: '',
                 commodityTag: '',
@@ -93,6 +93,9 @@ Vue.component('search', {
     },
     methods: {
         submitForm() {
+            console.log(this.ruleForm.time);
+
+            
             //前后端交互
         },
         resetForm(formName) {
@@ -139,7 +142,7 @@ Vue.component('search', {
                 <el-col :span="24">
                     <el-form-item label="时间：" prop="time">
                     <el-date-picker
-                        v-model="time"
+                        v-model="ruleForm.time"
                         type="daterange"
                         align="right"
                         unlink-panels

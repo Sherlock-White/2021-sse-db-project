@@ -52,7 +52,7 @@ Vue.component('naviright', {
             
             <!--购物车-->
             <div class="sidebaPersonage ">
-                <a href="/Purchase/ShoppingCart" class="topa">
+                <a href="www.baidu.com" class="topa">
                     <i class="fa fa-shopping-cart fa-lg user"></i>
                     <em class="tab-text">购物车</em>
                 </a>

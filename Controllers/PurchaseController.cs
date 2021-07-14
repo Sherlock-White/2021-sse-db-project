@@ -3,15 +3,28 @@ using Alipay.AopSdk.Core.Domain;
 using Alipay.AopSdk.Core.Request;
 using Alipay.AopSdk.Core.Util;
 using Internetmall.Models.AlipayModels;
+using InternetMall.DBContext;
+using InternetMall.Models;
+using InternetMall.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using ThirdParty.Json.LitJson;
 
 namespace InternetMall.Controllers
 {
     public class PurchaseController : Controller
     {
+        private readonly ModelContext _context;   //数据库上下文
+        private OrderService orderService;             //后端service
+
+        public PurchaseController(ModelContext context)
+        {
+            _context = context;
+            orderService = new OrderService(_context);
+        }
+
         #region 发起支付
         /// 发起支付请求
         /// </summary>
@@ -149,25 +162,64 @@ namespace InternetMall.Controllers
         }
 
         #endregion
-        public IActionResult ConfirmOrder()
+        public IActionResult ConfirmOrder()    //购买信息确认
         {
-            return View();
+            if (Request.Cookies["buyerNickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/Entry/BuyerLogIn");
+            }
         }
-        public IActionResult ShoppingCart()
+        public IActionResult ShoppingCart()    //购物车
         {
-            return View();
+            if (Request.Cookies["buyerNickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/Entry/BuyerLogIn");
+            }
         }
-        public IActionResult Settle()
+
+        public IActionResult successPay()   //最终购买成功
         {
-            return View();
+            if (Request.Cookies["buyerNickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/Entry/BuyerLogIn");
+            }
         }
-        public IActionResult Payment()
+
+        public IActionResult SubmitOrder()   //支付宝付款页面
         {
-            return View();
+            if (Request.Cookies["buyerNickName"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/Entry/BuyerLogIn");
+            }
         }
-        public IActionResult SubmitOrder()
+
+
+        //前后端交互
+        [HttpPost]
+        public IActionResult SetCommodDetail([FromBody] CommodDetail commodity)   //商品详情页确定具体情况
         {
-            return View();
+            Global.GCommodityID = commodity.ID;
+            Global.GCommodityNum = commodity.Amount;
+            Global.GConfirmOrderType = 1;
+            JsonData jsondata = new JsonData();
+            jsondata["commodityID"] = commodity.ID;
+            return Json(jsondata.ToJson());
         }
     }
 }

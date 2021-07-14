@@ -46,20 +46,56 @@
 
             <div class="main" id="home-list">
                 <div id="card-list">
-                    <card-list></card-list>
+                    <el-card class="card" v-for="item in object">
+                    <div class="card">
+                        <img :src="item.imgURL">
+                        <div class="info">
+                            <div class="label">{{item.label}}</div>
+                            <div class="num">{{item.num}}</div>
+                        </div>
+                    </div>
+                    </el-card>
+                    <!--
+                    <el-card class="card">
+                        <img src="~/Images/SellerBackground/home/followers_num.png">
+                        <div class="info">
+                            <div class="label">关注人数</div>
+                            <div class="num">233</div>
+                        </div>
+                    </el-card>
+                    <el-card class="card">
+                        <img src="~/Images/SellerBackground/home/recent_profit.png">
+                        <div class="info">
+                            <div class="label">本月盈利</div>
+                            <div class="num">233</div>
+                        </div>
+                    </el-card>
+                    <el-card class="card">
+                        <img src="~/Images/SellerBackground/home/orders_num .png">
+                        <div class="info">
+                            <div class="label">待发货订单</div>
+                            <div class="num">233</div>
+                        </div>
+                    </el-card>
+                    <el-card class="card">
+                        <img src="~/Images/SellerBackground/home/service_num.png">
+                        <div class="info">
+                            <div class="label">退款售后订单</div>
+                            <div class="num">233</div>
+                        </div>
+                    </el-card>
+                        -->
                 </div>
-                <list 
-                      v-bind:objlist="objectList"
-                      v-bind:draw="draw"
-                ></list>
+                <list v-bind:objlist="objectList"
+                      v-bind:draw="draw"></list>
             </div>
 
         </div>
     </div>
+    <script src="~/js/SellerBackground/home/displayData.js"></script>
     <script src="~/js/SellerBackground/sidebar.js"></script>
     <script src="~/js/SellerBackground/dropdownMenu.js"></script>
     <script src="~/js/SellerBackground/list.js"></script>
     <script src="~/js/SellerBackground/home/displayOrders.js"></script>
-    <script src="~/js/SellerBackground/home/displayData.js"></script>
 </body>
 </html>

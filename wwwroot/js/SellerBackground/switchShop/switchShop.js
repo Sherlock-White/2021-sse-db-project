@@ -24,7 +24,7 @@ Vue.component('shop', {
                 return '未定义';
             }
         },
-        handleClick(id){
+        handleClick(id) {
             console.log(id);
             
         }

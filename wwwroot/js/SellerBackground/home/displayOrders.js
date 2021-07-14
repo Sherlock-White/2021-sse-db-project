@@ -21,8 +21,12 @@ function displayorders(shopID) {
             }
             else {
                 ord.objectList = result;
+                console.log(result);
+                console.log(typeof (result));
                 ord.draw = true;
             }
         }
     });
 }
+
+window.onload=displayorders("1")

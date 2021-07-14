@@ -16,7 +16,7 @@ Vue.component('side-bar', {
                     window.location.href = '/SellerBackground/Orders';
                     break;
                 case 3:
-                    window.location.href = '#';
+                    window.location.href = '/SellerBackground/Analysis';
                     break;
                 case 4:
                     window.location.href = '#';

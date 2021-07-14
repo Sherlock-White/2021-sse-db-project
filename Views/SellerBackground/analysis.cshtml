@@ -2,32 +2,35 @@
 <html lang="zh-cn">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>英豪荟萃 - 数据分析 </title>
-  <!--左上角的图标信息-->
-  <link rel="icon" href="~/icon.ico" type="image/x-icon" />
-  <!--引入vue.js的cdn配置 -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <!--vue.js-->
-  <script type="text/javascript" src="../../wwwroot/js/Common/vue.js"></script>
-  <!-- element-ui.css -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-  <!-- element-ui.js -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英豪荟萃 - 数据分析 </title>
+    <!--左上角的图标信息-->
+    <link rel="icon" href="~/icon.ico" type="image/x-icon" />
+    <!--引入vue.js的cdn配置 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--vue.js-->
+    <script type="text/javascript" src="~/js/Common/vue.js"></script>
+    <!-- element-ui.css -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- element-ui.js -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+    @await Html.PartialAsync("~/Views/Shared/base.cshtml")
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../wwwroot/css/SellerBackground/tailwind.output.css" />
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
 
-  <link rel="stylesheet" href="../../wwwroot/css/SellerBackground/sidebar.css">
-  <link rel="stylesheet" href="../../wwwroot/css/SellerBackground/dropdownmenu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/SellerBackground/tailwind.output.css" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+
+    <link rel="stylesheet" href="~/css/SellerBackground/analysis/analysis.css">
+    <link rel="stylesheet" href="~/css/SellerBackground/sidebar.css">
+    <link rel="stylesheet" href="~/css/SellerBackground/dropdownmenu.css">
 </head>
 
 <body>
@@ -52,7 +55,18 @@
         </li>
       </ul>
       <div class="main">
-        <main class="h-full pb-16 overflow-y-auto" style="margin-left:200px">
+        <div id="card-list">
+          <el-card class="card" v-for="item in object">
+            <div class="card">
+              <img :src="item.imgURL">
+              <div class="info">
+                <div class="label">{{item.label}}</div>
+                <div class="num">{{item.num}}</div>
+              </div>
+            </div>
+          </el-card>
+        </div>
+        <main class="h-full pb-16 overflow-y-auto">
           <div class="container px-6 mx-auto grid">
             <div class="grid gap-6 mb-8 md:grid-cols-2">
               <!-- Doughnut/Pie chart -->
@@ -94,18 +108,19 @@
                     <span>Paid</span>
                   </div>
                 </div>
-              </div>             
+              </div>
             </div>
           </div>
         </main>
       </div>
     </div>
   </div>
-  <script src="../../wwwroot/js/SellerBackground/sidebar.js"></script>
-  <script src="../../wwwroot/js/SellerBackground/dropdownMenu.js"></script>
-  <script src="../../wwwroot/js/SellerBackground/analysis/charts-lines.js" defer></script>
-  <script src="../../wwwroot/js/SellerBackground/analysis/charts-pie.js" defer></script>
-  <script src="../../wwwroot/js/SellerBackground/analysis/charts-bars.js" defer></script>
+  <script src="~/js/SellerBackground/home/displayData.js"></script>
+  <script src="~/js/SellerBackground/sidebar.js"></script>
+  <script src="~/js/SellerBackground/dropdownMenu.js"></script>
+  <script src="~/js/SellerBackground/analysis/charts-lines.js" defer></script>
+  <script src="~/js/SellerBackground/analysis/charts-pie.js" defer></script>
+  <script src="~/js/SellerBackground/analysis/charts-bars.js" defer></script>
 </body>
 
 </html>

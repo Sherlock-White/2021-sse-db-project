@@ -59,6 +59,12 @@ namespace InternetMall.Controllers
             //这里还需要再修改
             return View();
         }
+
+        public IActionResult Analysis()
+        {
+            //这里还需要再修改
+            return View();
+        }
         public IActionResult ShopSignUp()
         {
             if (Request.Cookies["sellerNickName"] != null)

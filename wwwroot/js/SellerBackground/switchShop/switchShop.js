@@ -1,5 +1,7 @@
+
+
 Vue.component('shop', {
-    props: ["objlist", "draw"],
+    props:["objlist","draw"],
     //mounted(){
     //    this.displayshops(this.getCookie("sellerID"));
     //    this.displayshops("1");
@@ -9,28 +11,28 @@ Vue.component('shop', {
     watch: {
         draw: function (curVal, oldVal) {
             if (curVal === true) {
-
+                
             }
         }
     },
     methods: {
-        drawType(type) {
-            if (type === 'OFFICIAL_FLAGSHIP') {
+        drawType(type){
+            if(type==='OFFICIAL_FLAGSHIP'){
                 return '官方旗舰店';
-            } else if (type === 'PLATFORM_AUTH') {
+            }else if(type==='PLATFORM_AUTH'){
                 return '平台认证店';
-            } else if (type === 'INDIVIDUAL') {
+            }else if(type==='INDIVIDUAL'){
                 return '个人店铺';
-            } else if (type === 'BANNED_SHOP') {
+            }else if(type==='BANNED_SHOP'){
                 return '被封禁店铺';
-            } else {
+            }else{
                 return '未定义';
             }
         },
-        handleClick(id) {
+        handleClick(id){
             console.log(id);
-            //this.displayorders(id);
-
+            
+            
         }
     },
     template: `
@@ -47,3 +49,4 @@ Vue.component('shop', {
         </el-card>
     `
 })
+

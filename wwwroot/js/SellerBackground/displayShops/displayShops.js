@@ -1,4 +1,5 @@
-let sh =new Vue({
+
+let sh = new Vue({
     el: "#shop",
     data:
     {
@@ -28,6 +29,9 @@ function displayshops(sellerID) {
         dataType: "json",
         data: JSON.stringify({ "SellerID": sellerID }),
         success: function (result) {
+            if (result === null) {
+                /*sidebar_js.sidebar.show = false;*/
+            }
             console.log(result);
             sh.objectList = result;
             sh.draw = true;

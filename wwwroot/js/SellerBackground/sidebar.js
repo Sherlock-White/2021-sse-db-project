@@ -1,7 +1,8 @@
 Vue.component('side-bar', {
     data: function () {
         return {
-          active: 1, 
+            active: 1,
+            show:true,
         }
     },
     methods:{
@@ -102,4 +103,5 @@ Vue.component('side-bar', {
     `
 })
 
-var sidebar = new Vue({ el: '#nav' });
+let sidebar = new Vue({ el: '#nav' });
+

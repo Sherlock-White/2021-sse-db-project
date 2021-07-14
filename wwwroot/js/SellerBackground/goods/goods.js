@@ -326,10 +326,10 @@ function getShopID() {
         dataType: "json",
         data: null,
         success: function (result) {
-            ord.shopID = result;      //获取后端存储的shopID信息
+            goods.shopID = result;      //获取后端存储的shopID信息
             console.log(result);
             console.log("NowShopID:");
-            console.log(ord.shopID);
+            console.log(goods.shopID);
         }
     });
 }

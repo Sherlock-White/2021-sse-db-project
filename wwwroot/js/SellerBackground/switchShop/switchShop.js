@@ -58,6 +58,5 @@ Vue.component('shop', {
             </div>
         </el-card>
     `
-
 })
 

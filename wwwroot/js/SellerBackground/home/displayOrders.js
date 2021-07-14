@@ -42,5 +42,5 @@ function displayorders(shopID) {
 }
 
 window.onload = getShopID();
-console.log(ord.shopID);
+//console.log(ord.shopID);
 window.onload = displayorders(ord.shopID);

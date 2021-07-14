@@ -1,10 +1,3 @@
-let goods = new Vue({
-    el: '#upload',
-    data: {
-
-    }
-})
-
 Vue.component('upload', {
     props:["objlist","draw"],
     data: function () {
@@ -314,3 +307,49 @@ Vue.component('upload', {
         },
     }
 })
+
+let goods = new Vue({
+    el: '#upload',
+    data: {
+        objectList: [],
+        draw: false,
+        shopID:""
+    }
+})
+
+function getShopID() {
+    $.ajax({
+        type: "get",
+        url: "/SellerBackground/GetShopIDForm",
+        async: false,
+        contentType: "application/json",
+        dataType: "json",
+        data: null,
+        success: function (result) {
+            ord.shopID = result;      //获取后端存储的shopID信息
+            console.log(result);
+            console.log("NowShopID:");
+            console.log(ord.shopID);
+        }
+    });
+}
+
+function getGoods(shopID) {
+    $.ajax({
+        type: "post",
+        //改接口
+        url: "",
+        async: false,
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({ ShopID: shopID }), //请求类型
+        success: function (result) {
+            objectList = result;
+        }
+    });
+}
+
+//shopID
+window.onload = getShopID();
+window.onload = getGoods(goods.shopID);
+

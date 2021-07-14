@@ -106,8 +106,11 @@ window.onload = start();
 =======
 })
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 32415d6 (Merge branch 'main' into main)
 =======
+=======
+>>>>>>> parent of 624510a (Merge pull request #33 from 1654364091/main)
 
 let shop = new Vue({ el: '#shop' });
 
@@ -142,4 +145,7 @@ function start() {
 window.onload = start();
 
 
+<<<<<<< HEAD
+>>>>>>> parent of 624510a (Merge pull request #33 from 1654364091/main)
+=======
 >>>>>>> parent of 624510a (Merge pull request #33 from 1654364091/main)

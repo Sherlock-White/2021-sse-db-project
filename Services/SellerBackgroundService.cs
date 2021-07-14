@@ -262,6 +262,7 @@ namespace InternetMall.Services
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             var shops = _context.Shops.Where(s => s.SellerId == sellerID).ToList();
             if (shops == null || shops.Count == 0)//没有店铺
 =======
@@ -269,6 +270,10 @@ namespace InternetMall.Services
 
             if (shoplist == null || shoplist.Count == 0)//没有店铺
 >>>>>>> parent of 32415d6 (Merge branch 'main' into main)
+=======
+            var shops = _context.Shops.Where(s => s.SellerId == sellerID).ToList();
+            if (shops == null || shops.Count == 0)//没有店铺
+>>>>>>> parent of 624510a (Merge pull request #33 from 1654364091/main)
 =======
             var shops = _context.Shops.Where(s => s.SellerId == sellerID).ToList();
             if (shops == null || shops.Count == 0)//没有店铺

@@ -45,7 +45,7 @@ Vue.component('upload', {
                         success: function (result) {
                             var jsonData = eval("(" + result + ")");   //将json转换成对象
                             if (jsonData.signUp != "ERROR") {
-                                window.location = "/SellerBackground/Home";
+                                window.location = "/SellerBackground/SwitchShop";
                             }
                             else {
                                 alert("此店铺已被注册");

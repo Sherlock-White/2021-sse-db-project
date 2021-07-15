@@ -29,17 +29,26 @@ function displayshops(sellerID) {
         dataType: "json",
         data: JSON.stringify({ "SellerID": sellerID }),
         success: function (result) {
-            /*if (result === null) {
+            console.log(result);
+            console.log("‘⁄’‚£°£°£°£°£°");
+            if (result === null) {
                 console.log("ø’¡À£°£°£°£°");
                 /////////////////////////////////////////////
                 ////////////////////////////////////////////
                 ///////////////////////////////////////////
                 sidebar.show = false;
-            }*/
+
+            }
             console.log(result);
             sh.objectList = result;
             sh.draw = true;
             sidebar.show = true;
+        },
+        error: function (result) {
+            sidebar.show = false;
+            if (window.location.href != "http://location:44393/SellerBackground/ShopSignUp") {
+                window.location.href = "/SellerBackground/ShopSignUp";
+            }
         }
     });
 }

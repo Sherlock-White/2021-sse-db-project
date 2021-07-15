@@ -169,9 +169,12 @@ namespace InternetMall.Controllers
         public IActionResult DisplayShopsForm([FromBody] DisplayShopsView displayshops)
         {
             var str = sellerBackgroundService.DisplayShops(displayshops.SellerID);
+            JsonData jsondata = new JsonData();
 
             if (str==null)
             {
+                //jsondata["Content"] = "FAILED";
+                //return Json(jsondata.ToJson());
                 return new ContentResult { Content = "", ContentType = "application/json" };   //无店铺，切换到“创建店铺”界面
             }
             return new ContentResult { Content = str, ContentType = "application/json" };       //进入“选择店铺”页面

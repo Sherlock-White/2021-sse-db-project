@@ -27,7 +27,7 @@ new Vue({
                     success: function (result) {
                         var jsonData = eval("(" + result + ")");   //将json转换成对象
                         if (jsonData.LogIn != "ERROR") {
-                            window.location.href = "/SellerBackground/Home";
+                            window.location.href = "/SellerBackground/SwitchShop";
                         }
                         else {
                             alert("账号或密码错误!");

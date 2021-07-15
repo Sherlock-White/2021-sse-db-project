@@ -27,7 +27,7 @@ function getShopID() {
 
 function displayorders(shopID) {
     $.ajax({
-        type: "post",
+        type: "get",
         url: "/SellerBackground/DisplayOrdersForm",
         async: false,
         contentType: "application/json",

@@ -137,4 +137,3 @@ function getIfShop() {
 }
 
 window.onload = getIfShop();
-console.log(sidebar.show);

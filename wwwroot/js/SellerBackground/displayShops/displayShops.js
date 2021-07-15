@@ -18,6 +18,18 @@ function getCookie(cname) {
     return "";
 }
 
+function setifshop(ifshop) {
+    $.ajax({
+        type: "post",
+        url: "/SellerBackground/SetIfShopForm",
+        async: false,
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({ "IfShop": ifshop }),
+        success: {}
+    })
+}
+
 function displayshops(sellerID) {
     console.log("sellerID:");
     console.log(sellerID);
@@ -29,25 +41,27 @@ function displayshops(sellerID) {
         dataType: "json",
         data: JSON.stringify({ "SellerID": sellerID }),
         success: function (result) {
+            console.log("result:");
             console.log(result);
-            console.log("在这！！！！！");
-            if (result === null) {
-                console.log("空了！！！！");
-                /////////////////////////////////////////////
-                ////////////////////////////////////////////
-                ///////////////////////////////////////////
-                sidebar.show = false;
-
+            if (result === null || result === "" || typeof (result) === "undefined") {
+                setifshop("1"); //设置“无店铺”信息
+                if (window.location.href != "https://localhost:44393/SellerBackground/ShopSignUp") {
+                    window.location.href = "/SellerBackground/ShopSignUp";
+                }
             }
-            console.log(result);
-            sh.objectList = result;
-            sh.draw = true;
-            sidebar.show = true;
+            else {
+                sh.objectList = result;
+                sh.draw = true;
+                setifshop("1");  //设置“有店铺”信息
+                if (window.location.href != "https://localhost:44393/SellerBackground/SwitchShop") {
+                    window.location.href = "/SellerBackground/SwitchShop";
+                }
+            }
         },
         error: function (result) {
-            sidebar.show = false;
-            if (window.location.href != "http://location:44393/SellerBackground/ShopSignUp") {
-                window.location.href = "/SellerBackground/ShopSignUp";
+            setifshop("0");      //设置“无店铺”信息
+            if (window.location.href != "https://localhost:44393/sellerbackground/shopsignup") {
+                window.location.href = "/sellerbackground/shopsignup";
             }
         }
     });

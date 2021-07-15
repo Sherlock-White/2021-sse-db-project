@@ -14,6 +14,7 @@ function getShopID() {
         async: false,
         contentType: "application/json",
         dataType: "json",
+        data:null,
         //data: JSON.stringify({ "ShopID": shopID }),
         success: function (result) {
             //let temp = JSON.stringify(result);
